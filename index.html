@@ -6,31 +6,26 @@
   <title>About Us - The UCN Times</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: "Poppins", sans-serif;
-      background: #fff;
-      color: #222;
-      overflow-x: hidden;
-    }
+    body { font-family: "Poppins", sans-serif; background: #fff; color: #222; overflow-x: hidden; }
 
-    /* ---------- Background Blobs ---------- */
+    /* Background Blobs */
     .blob {
       position: absolute;
       border-radius: 50%;
       filter: blur(120px);
-      opacity: 0.4;
+      opacity: 0.5;
       z-index: -1;
       animation: float 20s infinite ease-in-out alternate;
     }
-    .blob1 { width: 400px; height: 400px; top: -100px; left: -100px; background: #ffe0b2; }
-    .blob2 { width: 350px; height: 350px; bottom: -150px; right: -120px; background: #cce5ff; }
-    .blob3 { width: 300px; height: 300px; top: 50%; left: 50%; background: #d0f5d8; }
+    .blob1 { width: 400px; height: 400px; top: -100px; left: -100px; background: #ff6600; }
+    .blob2 { width: 350px; height: 350px; bottom: -150px; right: -120px; background: #007bff; }
+    .blob3 { width: 300px; height: 300px; top: 50%; left: 50%; background: #00cc88; }
     @keyframes float {
       0% { transform: translate(0,0) scale(1); }
       100% { transform: translate(60px,-60px) scale(1.2); }
     }
 
-    /* ---------- Splash ---------- */
+    /* Splash */
     #splash {
       position: fixed; top: 0; left: 0; width: 100%; height: 100%;
       background: #fff;
@@ -46,14 +41,14 @@
     .loader {
       margin-top: 20px;
       width: 50px; height: 50px;
-      border: 4px solid #ddd; border-top: 4px solid #222;
+      border: 4px solid #eee; border-top: 4px solid #ff6600;
       border-radius: 50%;
       animation: spin 1s linear infinite;
     }
     @keyframes spin { to { transform: rotate(360deg); } }
     @keyframes pulse { 0%,100%{ opacity:.6; } 50%{ opacity:1; } }
 
-    /* ---------- Navbar ---------- */
+    /* Navbar */
     header {
       position: sticky; top: 0;
       background: rgba(255,255,255,0.9);
@@ -61,14 +56,14 @@
       padding: 15px 20px;
       display: flex; justify-content: space-between; align-items: center;
       z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border-bottom: 1px solid #eee;
     }
     .logo {
       font-size: 24px; font-weight: bold; color: #ff6600; text-decoration: none;
     }
     nav { display: flex; gap: 25px; }
     nav a {
-      color: #222; text-decoration: none; position: relative; font-size: 16px;
+      color: #333; text-decoration: none; position: relative; font-size: 16px;
       transition: color 0.3s;
     }
     nav a::after {
@@ -78,27 +73,27 @@
     }
     nav a:hover::after { width: 100%; }
     .menu-btn {
-      display: none; font-size: 28px; color: #222; cursor: pointer;
+      display: none; font-size: 28px; color: #333; cursor: pointer;
     }
 
-    /* ---------- Sections ---------- */
+    /* Sections */
     section { padding: 80px 20px; max-width: 1200px; margin: auto; }
     h1, h2 { text-align: center; margin-bottom: 20px; font-weight: 700; }
-    p { line-height: 1.8; text-align: center; }
+    p { line-height: 1.8; text-align: center; color: #444; }
 
-    /* ---------- Cards (Glassmorphism) ---------- */
+    /* Cards */
     .cards {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 25px; margin-top: 50px;
     }
     .card {
-      background: rgba(255,255,255,0.6);
+      background: rgba(255,255,255,0.7);
       border: 1px solid rgba(0,0,0,0.05);
       border-radius: 15px;
       padding: 25px;
       text-align: center;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      backdrop-filter: blur(12px);
       transform: translateY(40px) scale(0.9);
       opacity: 0;
       transition: all 0.8s ease;
@@ -109,14 +104,14 @@
     }
     .card:hover {
       transform: scale(1.05);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
     }
     .card h3 { margin-bottom: 15px; color: #ff6600; font-size: 20px; }
 
-    /* ---------- Footer ---------- */
-    footer { text-align: center; padding: 20px; background: #fafafa; color: #666; }
+    /* Footer */
+    footer { text-align: center; padding: 20px; background: #fafafa; color: #666; border-top: 1px solid #eee; }
 
-    /* ---------- Mobile ---------- */
+    /* Mobile */
     @media (max-width: 768px) {
       nav {
         position: absolute; top: 70px; right: -100%;
@@ -124,7 +119,7 @@
         flex-direction: column;
         width: 220px; padding: 20px;
         transition: right 0.3s ease;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        border: 1px solid #eee;
       }
       nav.active { right: 0; }
       .menu-btn { display: block; }
@@ -182,7 +177,6 @@
     <footer><p>&copy; 2025 The UCN Times. All rights reserved.</p></footer>
   </div>
 
-  <!-- JS -->
   <script>
     // Splash Screen
     window.addEventListener("load", () => {
@@ -209,4 +203,3 @@
   </script>
 </body>
 </html>
-
